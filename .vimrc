@@ -2,6 +2,7 @@ syntax on
 
 filetype plugin indent on
 
+set nocompatible
 set number
 set showcmd
 set autoindent
@@ -10,6 +11,7 @@ set tabstop=4
 set shiftwidth=4
 set hlsearch
 set incsearch
+set t_Co=256
 
 set clipboard=unnamed,unnamedplus " Copy into system (*, +_) register
 
@@ -38,3 +40,6 @@ let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standar
 
 " airline config
 let g:airline#extensions#tabline#enabled = 1
+
+set list
+set listchars=tab:>-,trail:·

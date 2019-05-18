@@ -31,6 +31,7 @@ call plug#begin()
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'mileszs/ack.vim'
 Plug 'vim-airline/vim-airline'
+Plug 'jiangmiao/auto-pairs'
 
 call plug#end()
 

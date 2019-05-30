@@ -10,8 +10,13 @@ set expandtab
 set tabstop=4
 set shiftwidth=4
 set hlsearch
+" show match as search proceeds
 set incsearch
 set t_Co=256
+" case insensitive
+set ignorecase
+" use case if any caps used
+set smartcase
 
 set clipboard=unnamed,unnamedplus " Copy into system (*, +_) register
 
@@ -29,9 +34,9 @@ silent! helptags ALL "Load help file for all plugins
 call plug#begin()
 
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'mileszs/ack.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'jiangmiao/auto-pairs'
+Plug 'scrooloose/nerdcommenter'
 
 call plug#end()
 
@@ -43,4 +48,4 @@ let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standar
 let g:airline#extensions#tabline#enabled = 1
 
 set list
-set listchars=tab:>-,trail:·
+set listchars=tab:\|\ ,trail:·

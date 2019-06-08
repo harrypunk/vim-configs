@@ -40,8 +40,14 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-unimpaired'
 Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
 Plug 'sbdchd/neoformat'
+Plug 'w0rp/ale'
 
 call plug#end()
+
+" Set Eslint as your plugging manager
+let g:ale_fixers = {  'javascript': ['eslint']  }
+let g:ale_sign_error = '❌'
+let g:ale_sign_warning = '⚠️'
 
 " CtrlP
 let g:ctrlp_working_path_mode = 'ra' " Starting directory

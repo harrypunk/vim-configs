@@ -53,6 +53,9 @@ let g:airline#extensions#tabline#enabled = 1
 " set list
 " set listchars=tab:\|\ ,trail:·
 
+" To map <Esc> to exit terminal-mode:
+:tnoremap <Esc> <C-\><C-n>
+
 " get correct comment highlight of jsonc
 autocmd FileType json syntax match Comment +\/\/.\+$+
 

@@ -75,3 +75,6 @@ inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
       \ <SID>check_back_space() ? "\<TAB>" :
       \ coc#refresh()
+
+" To have Neoformat run Prettier on save:
+autocmd BufWritePre *.js Neoformat

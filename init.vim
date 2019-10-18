@@ -30,6 +30,8 @@ colorscheme desert
 packloadall "Load all plugins
 silent! helptags ALL "Load help file for all plugins
 
+autocmd TermOpen * setlocal nonumber norelativenumber
+
 " Manage plugins with vim-plug.
 call plug#begin()
 
@@ -40,7 +42,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-unimpaired'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'sbdchd/neoformat'
-Plug 'w0rp/ale'
+Plug 'dense-analysis/ale'
 " Track the engine.
 Plug 'SirVer/ultisnips'
 " Snippets are separated from the engine. Add this if you want them:

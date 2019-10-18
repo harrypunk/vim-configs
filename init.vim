@@ -30,6 +30,7 @@ colorscheme desert
 packloadall "Load all plugins
 silent! helptags ALL "Load help file for all plugins
 
+" hide line number in term
 autocmd TermOpen * setlocal nonumber norelativenumber
 
 " Manage plugins with vim-plug.

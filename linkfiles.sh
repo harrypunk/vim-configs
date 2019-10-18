@@ -1,4 +1,4 @@
 #!/usr/bin/bash
-ln ~/.config/nvim/init.vim ./init.vim 
-ln ~/.config/nvim/coc-settings.json ./coc-settings.json 
-ln ~/.vimrc ./.vimrc
+ln ./init.vim ~/.config/nvim/init.vim 
+ln ./coc-settings.json ~/.config/nvim/coc-settings.json 
+ln ./.vimrc ~/.vimrc

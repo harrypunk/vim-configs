@@ -93,7 +93,7 @@ endfunction
 let g:coc_snippet_next = '<tab>'
 
 " To have Neoformat run Prettier on save:
-autocmd BufWritePre *.js Neoformat
+autocmd BufWritePre *.js,*.yaml,*.yml Neoformat prettier
 
 
 " To use `ALT+{h,j,k,l}` to navigate windows from any mode:

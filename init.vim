@@ -64,8 +64,8 @@ let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standar
 " airline config
 let g:airline#extensions#tabline#enabled = 1
 
-" set list
-" set listchars=tab:\|\ ,trail:·
+set list
+set listchars=tab:\|\ ,trail:·
 
 " To map <Esc> to exit terminal-mode:
 :tnoremap <Esc> <C-\><C-n>
@@ -85,13 +85,6 @@ inoremap <silent><expr> <TAB>
       \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
       \ <SID>check_back_space() ? "\<TAB>" :
       \ coc#refresh()
-
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-
-let g:coc_snippet_next = '<tab>'
 
 " To have Neoformat run Prettier on save:
 autocmd BufWritePre *.js,*.yaml,*.yml Neoformat prettier

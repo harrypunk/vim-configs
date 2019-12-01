@@ -88,6 +88,7 @@ inoremap <silent><expr> <TAB>
 
 " To have Neoformat run Prettier on save:
 autocmd BufWritePre *.js,*.yaml,*.yml Neoformat prettier
+autocmd BufWritePre *.hs Neoformat brittany
 
 
 " To use `ALT+{h,j,k,l}` to navigate windows from any mode:
@@ -118,3 +119,7 @@ let g:coc_snippet_prev = '<c-k>'
 
 " Use <C-j> for both expand and jump (make expand higher priority.)
 imap <C-j> <Plug>(coc-snippets-expand-jump)
+
+" ALE offers some commands with <Plug> keybinds for moving between warnings and errors quickly.
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-j> <Plug>(ale_next_wrap)

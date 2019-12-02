@@ -48,13 +48,12 @@ Plug 'dense-analysis/ale'
 Plug 'SirVer/ultisnips'
 " Snippets are separated from the engine. Add this if you want them:
 Plug 'honza/vim-snippets'
-Plug 'LnL7/vim-nix'
 
 call plug#end()
 
 " Set Eslint as your plugging manager
 let g:ale_fixers = {  'javascript': ['eslint']  }
-let g:ale_sign_error = '>>'
+let g:ale_sign_error = '>'
 let g:ale_sign_warning = '!'
 
 " CtrlP
@@ -88,7 +87,7 @@ inoremap <silent><expr> <TAB>
 
 " To have Neoformat run Prettier on save:
 autocmd BufWritePre *.js,*.yaml,*.yml Neoformat prettier
-autocmd BufWritePre *.hs Neoformat brittany
+autocmd BufWritePre *.hs Neoformat hindent
 
 
 " To use `ALT+{h,j,k,l}` to navigate windows from any mode:

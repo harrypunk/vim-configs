@@ -91,7 +91,7 @@ inoremap <silent><expr> <TAB>
 
 " To have Neoformat run Prettier on save:
 autocmd BufWritePre *.js,*.yaml,*.yml Neoformat prettier
-autocmd BufWritePre *.hs Neoformat hindent
+autocmd BufWritePre *.hs Neoformat brittany
 
 
 " To use `ALT+{h,j,k,l}` to navigate windows from any mode:
@@ -129,15 +129,8 @@ nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
 " haskell-ide-engine
 let g:LanguageClient_serverCommands = { 'haskell': ['hie-wrapper'] }
-nnoremap <F5> :call LanguageClient_contextMenu()<CR>
-map <Leader>lk :call LanguageClient#textDocument_hover()<CR>
-map <Leader>lg :call LanguageClient#textDocument_definition()<CR>
-map <Leader>lf :call LanguageClient#textDocument_formatting()<CR>
-map <Leader>lb :call LanguageClient#textDocument_references()<CR>
-map <Leader>la :call LanguageClient#textDocument_codeAction()<CR>
-map <Leader>ls :call LanguageClient#textDocument_documentSymbol()<CR>
-hi link ALEError Error
-hi Warning term=underline cterm=underline ctermfg=Yellow gui=undercurl guisp=Gold
-hi link ALEWarning Warning
-hi link ALEInfo SpellCap
+highlight link ALEError Error
+highlight Warning term=underline cterm=underline ctermfg=Yellow gui=undercurl guisp=Gold
+highlight link ALEWarning Warning
+highlight link ALEInfo SpellCap
 let g:LanguageClient_rootMarkers = ['*.cabal', 'stack.yaml']

@@ -25,7 +25,7 @@ set backspace=2
 set foldmethod=indent
 autocmd BufRead * normal zR
 
-colorscheme desert
+colorscheme default
 
 packloadall "Load all plugins
 silent! helptags ALL "Load help file for all plugins
@@ -59,6 +59,8 @@ call plug#end()
 let g:ale_fixers = {  'javascript': ['eslint']  }
 let g:ale_sign_error = '>'
 let g:ale_sign_warning = '!'
+" Show Vim windows for the loclist or quickfix items when a file contains warnings or errors
+let g:ale_open_list = 1
 
 " CtrlP
 let g:ctrlp_working_path_mode = 'ra' " Starting directory

@@ -52,6 +52,7 @@ Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
     \ 'do': './install.sh'
     \ }
+Plug 'maxmellon/vim-jsx-pretty'
 
 call plug#end()
 

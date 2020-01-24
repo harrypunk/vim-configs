@@ -60,8 +60,6 @@ call plug#end()
 let g:ale_fixers = {  'javascript': ['eslint']  }
 let g:ale_sign_error = '>'
 let g:ale_sign_warning = '!'
-" Show Vim windows for the loclist or quickfix items when a file contains warnings or errors
-let g:ale_open_list = 1
 
 " CtrlP
 let g:ctrlp_working_path_mode = 'ra' " Starting directory
@@ -92,10 +90,8 @@ inoremap <silent><expr> <TAB>
       \ <SID>check_back_space() ? "\<TAB>" :
       \ coc#refresh()
 
-" To have Neoformat run Prettier on save:
-autocmd BufWritePre *.js,*.yaml,*.yml Neoformat prettier
-autocmd BufWritePre *.hs Neoformat brittany
-
+" Map yf to Neoformat
+nmap yf :Neoformat<CR>
 
 " To use `ALT+{h,j,k,l}` to navigate windows from any mode:
     :tnoremap <A-h> <C-\><C-N><C-w>h

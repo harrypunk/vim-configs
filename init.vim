@@ -62,7 +62,7 @@ let g:ale_sign_error = '>'
 let g:ale_sign_warning = '!'
 
 " CtrlP
-let g:ctrlp_working_path_mode = 'c' " Starting directory
+let g:ctrlp_working_path_mode = 'a' " Starting directory
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard'] " Ignore files in .gitignore
 
 " airline config

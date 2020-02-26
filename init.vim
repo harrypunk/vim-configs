@@ -57,7 +57,6 @@ Plug 'maxmellon/vim-jsx-pretty'
 call plug#end()
 
 " Set Eslint as your plugging manager
-let g:ale_fixers = {  'javascript': ['eslint']  }
 let g:ale_sign_error = '>'
 let g:ale_sign_warning = '!'
 
@@ -127,9 +126,14 @@ nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
 " haskell-ide-engine
-let g:LanguageClient_serverCommands = { 'haskell': ['hie-wrapper'] }
-highlight link ALEError Error
-highlight Warning term=underline cterm=underline ctermfg=Yellow gui=undercurl guisp=Gold
-highlight link ALEWarning Warning
-highlight link ALEInfo SpellCap
-let g:LanguageClient_rootMarkers = ['*.cabal', 'stack.yaml']
+"let g:LanguageClient_serverCommands = { 'haskell': ['hie-wrapper'] }
+"highlight link ALEError Error
+"highlight Warning term=underline cterm=underline ctermfg=Yellow gui=undercurl guisp=Gold
+"highlight link ALEWarning Warning
+"highlight link ALEInfo SpellCap
+"let g:LanguageClient_rootMarkers = ['*.cabal', 'stack.yaml']
+
+" ale eslint yarn
+let g:ale_javascript_eslint_use_global = 1
+let g:ale_javascript_eslint_executable = 'yarn'
+let g:ale_javascript_eslint_options = 'run eslint'

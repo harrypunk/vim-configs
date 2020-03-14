@@ -23,7 +23,6 @@ set clipboard=unnamed,unnamedplus " Copy into system (*, +_) register
 set backspace=2
 
 set foldmethod=indent
-autocmd BufRead * normal zR
 
 colorscheme default
 

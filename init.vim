@@ -22,9 +22,7 @@ set clipboard=unnamed,unnamedplus " Copy into system (*, +_) register
 
 set backspace=2
 
-set foldmethod=indent
-
-colorscheme default
+set foldmethod=manual
 
 packloadall "Load all plugins
 silent! helptags ALL "Load help file for all plugins
@@ -58,6 +56,9 @@ call plug#end()
 " Set Eslint as your plugging manager
 let g:ale_sign_error = '>'
 let g:ale_sign_warning = '!'
+let g:ale_linters = {
+\   'javascript': ['eslint'],
+\}
 
 " CtrlP
 let g:ctrlp_working_path_mode = 'a' " Starting directory
@@ -132,7 +133,3 @@ nmap <silent> <C-j> <Plug>(ale_next_wrap)
 "highlight link ALEInfo SpellCap
 "let g:LanguageClient_rootMarkers = ['*.cabal', 'stack.yaml']
 
-" ale eslint yarn
-let g:ale_javascript_eslint_use_global = 1
-let g:ale_javascript_eslint_executable = 'yarn'
-let g:ale_javascript_eslint_options = 'run eslint'

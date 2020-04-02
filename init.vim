@@ -133,3 +133,8 @@ nmap <silent> <C-j> <Plug>(ale_next_wrap)
 "highlight link ALEInfo SpellCap
 "let g:LanguageClient_rootMarkers = ['*.cabal', 'stack.yaml']
 
+" vim backup
+set nobackup
+set nowritebackup
+set noswapfile
+set noundofile

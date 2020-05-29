@@ -23,6 +23,12 @@ set clipboard=unnamed,unnamedplus " Copy into system (*, +_) register
 set backspace=2
 
 set foldmethod=manual
+" vim backup
+set nobackup
+set nowritebackup
+set noswapfile
+set noundofile
+set spelllang=en
 
 packloadall "Load all plugins
 silent! helptags ALL "Load help file for all plugins
@@ -76,12 +82,6 @@ set listchars=tab:\|\ ,trail:·
 " get correct comment highlight of jsonc
 autocmd FileType json syntax match Comment +\/\/.\+$+
 
-" use <tab> for trigger completion and navigate to the next complete item
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~ '\s'
-endfunction
-
 " Make <tab> used for trigger completion, completion confirm, snippet expand and jump like VSCode.
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? coc#_select_confirm() :
@@ -106,35 +106,8 @@ nmap yf :Neoformat<CR>
     :nnoremap <A-k> <C-w>k
     :nnoremap <A-l> <C-w>l
 
-" Use <C-l> for trigger snippet expand.
-imap <C-l> <Plug>(coc-snippets-expand)
-
-" Use <C-j> for select text for visual placeholder of snippet.
-vmap <C-j> <Plug>(coc-snippets-select)
-
-" Use <C-j> for jump to next placeholder, it's default of coc.nvim
-let g:coc_snippet_next = '<c-j>'
-
-" Use <C-k> for jump to previous placeholder, it's default of coc.nvim
-let g:coc_snippet_prev = '<c-k>'
-
-" Use <C-j> for both expand and jump (make expand higher priority.)
-imap <C-j> <Plug>(coc-snippets-expand-jump)
 
 " ALE offers some commands with <Plug> keybinds for moving between warnings and errors quickly.
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
-" haskell-ide-engine
-"let g:LanguageClient_serverCommands = { 'haskell': ['hie-wrapper'] }
-"highlight link ALEError Error
-"highlight Warning term=underline cterm=underline ctermfg=Yellow gui=undercurl guisp=Gold
-"highlight link ALEWarning Warning
-"highlight link ALEInfo SpellCap
-"let g:LanguageClient_rootMarkers = ['*.cabal', 'stack.yaml']
-
-" vim backup
-set nobackup
-set nowritebackup
-set noswapfile
-set noundofile

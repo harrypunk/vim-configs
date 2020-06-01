@@ -56,6 +56,9 @@ Plug 'autozimu/LanguageClient-neovim', {
     \ 'do': './install.sh'
     \ }
 Plug 'maxmellon/vim-jsx-pretty'
+Plug 'tpope/vim-surround'
+Plug 'mattn/emmet-vim'
+
 
 call plug#end()
 
@@ -111,3 +114,9 @@ nmap yf :Neoformat<CR>
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
+let g:user_emmet_settings = {
+\  'javascript.jsx' : {
+\      'extends': 'jsx',
+\      'quote_char': "'",
+\  },
+\}

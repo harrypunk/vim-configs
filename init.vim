@@ -36,6 +36,9 @@ silent! helptags ALL "Load help file for all plugins
 " hide line number in term
 autocmd TermOpen * setlocal nonumber norelativenumber
 
+" Disable netrw
+let loaded_netrwPlugin = 1
+
 " Manage plugins with vim-plug.
 call plug#begin()
 
@@ -129,3 +132,4 @@ hi link ALEError Error
 hi Warning term=underline cterm=underline ctermfg=Yellow gui=undercurl guisp=Gold
 hi link ALEWarning Warning
 hi link ALEInfo SpellCap
+let g:LanguageClient_rootMarkers = ['*.cabal', 'stack.yaml']

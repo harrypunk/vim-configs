@@ -36,9 +36,6 @@ silent! helptags ALL "Load help file for all plugins
 " hide line number in term
 autocmd TermOpen * setlocal nonumber norelativenumber
 
-" Disable netrw
-let loaded_netrwPlugin = 1
-
 " Manage plugins with vim-plug.
 call plug#begin()
 

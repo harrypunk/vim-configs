@@ -58,6 +58,7 @@ Plug 'autozimu/LanguageClient-neovim', {
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'tpope/vim-surround'
 Plug 'mattn/emmet-vim'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 
 call plug#end()
@@ -92,8 +93,8 @@ inoremap <silent><expr> <TAB>
       \ <SID>check_back_space() ? "\<TAB>" :
       \ coc#refresh()
 
-" Map yf to Neoformat
-nmap yf :Neoformat<CR>
+" Map Leader-f to Neoformat
+nmap <Leader>f :Neoformat<CR>
 
 " To use `ALT+{h,j,k,l}` to navigate windows from any mode:
     :tnoremap <A-h> <C-\><C-N><C-w>h

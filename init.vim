@@ -58,8 +58,6 @@ Plug 'autozimu/LanguageClient-neovim', {
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'tpope/vim-surround'
 Plug 'mattn/emmet-vim'
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-
 
 call plug#end()
 

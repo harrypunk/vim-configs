@@ -51,10 +51,6 @@ Plug 'dense-analysis/ale'
 Plug 'SirVer/ultisnips'
 " Snippets are separated from the engine. Add this if you want them:
 Plug 'honza/vim-snippets'
-Plug 'autozimu/LanguageClient-neovim', {
-    \ 'branch': 'next',
-    \ 'do': './install.sh'
-    \ }
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'tpope/vim-surround'
 Plug 'mattn/emmet-vim'
@@ -119,13 +115,3 @@ let g:user_emmet_settings = {
 \      'quote_char': "'",
 \  },
 \}
-
-let g:LanguageClient_serverCommands = { 'haskell': ['hie-wrapper', '--lsp'] }
-let g:ale_linters ={
-      \   'haskell': ['hlint', 'hdevtools', 'hfmt'],
-      \}
-hi link ALEError Error
-hi Warning term=underline cterm=underline ctermfg=Yellow gui=undercurl guisp=Gold
-hi link ALEWarning Warning
-hi link ALEInfo SpellCap
-let g:LanguageClient_rootMarkers = ['*.cabal', 'stack.yaml']

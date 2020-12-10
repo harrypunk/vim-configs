@@ -54,6 +54,8 @@ Plug 'honza/vim-snippets'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'tpope/vim-surround'
 Plug 'mattn/emmet-vim'
+Plug 'jparise/vim-graphql'
+Plug 'cespare/vim-toml'
 
 call plug#end()
 

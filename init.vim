@@ -44,18 +44,16 @@ Plug 'vim-airline/vim-airline'
 Plug 'jiangmiao/auto-pairs'
 Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-unimpaired'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'sbdchd/neoformat'
 Plug 'dense-analysis/ale'
-" Track the engine.
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'SirVer/ultisnips'
 " Snippets are separated from the engine. Add this if you want them:
 Plug 'honza/vim-snippets'
-Plug 'maxmellon/vim-jsx-pretty'
 Plug 'tpope/vim-surround'
 Plug 'mattn/emmet-vim'
-Plug 'jparise/vim-graphql'
 Plug 'cespare/vim-toml'
+Plug 'ron-rs/ron'
 
 call plug#end()
 
@@ -64,6 +62,7 @@ let g:ale_sign_error = '>'
 let g:ale_sign_warning = '!'
 let g:ale_linters = {
 \   'javascript': ['eslint'],
+\   'python': ['flake8'],
 \}
 
 " CtrlP
@@ -81,13 +80,6 @@ set listchars=tab:\|\ ,trail:·
 
 " get correct comment highlight of jsonc
 autocmd FileType json syntax match Comment +\/\/.\+$+
-
-" Make <tab> used for trigger completion, completion confirm, snippet expand and jump like VSCode.
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? coc#_select_confirm() :
-      \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
 
 " Map Leader-f to Neoformat
 nmap <Leader>f :Neoformat<CR>
@@ -117,3 +109,7 @@ let g:user_emmet_settings = {
 \      'quote_char': "'",
 \  },
 \}
+
+" Use deoplete.
+let g:deoplete#enable_at_startup = 1
+

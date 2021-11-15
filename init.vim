@@ -53,7 +53,7 @@ Plug 'honza/vim-snippets'
 Plug 'tpope/vim-surround'
 Plug 'mattn/emmet-vim'
 Plug 'cespare/vim-toml'
-Plug 'ron-rs/ron'
+Plug 'easymotion/vim-easymotion'
 
 call plug#end()
 
@@ -77,9 +77,6 @@ set listchars=tab:\|\ ,trail:·
 
 " To map <Esc> to exit terminal-mode:
 :tnoremap <Esc> <C-\><C-n>
-
-" get correct comment highlight of jsonc
-autocmd FileType json syntax match Comment +\/\/.\+$+
 
 " Map Leader-f to Neoformat
 nmap <Leader>f :Neoformat<CR>
@@ -112,4 +109,8 @@ let g:user_emmet_settings = {
 
 " Use deoplete.
 let g:deoplete#enable_at_startup = 1
+
+" https://github.com/Shougo/deoplete.nvim/issues/115
+" auto close popup
+autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | silent! pclose | endif
 

@@ -30,12 +30,5 @@ colorscheme koehler
 packloadall "Load all plugins
 silent! helptags ALL "Load help file for all plugins
 
-" Manage plugins with vim-plug.
-call plug#begin()
-
-Plug 'jiangmiao/auto-pairs'
-
-call plug#end()
-
 set list
 set listchars=tab:\|\ ,trail:·
